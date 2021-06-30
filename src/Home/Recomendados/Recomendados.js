@@ -1,5 +1,7 @@
 import React, { useState } from "react";
 
+import Producto from "../Producto/Producto";
+
 const listaProductos = [
   {
     isActive: true,
@@ -51,7 +53,7 @@ const listaProductos = [
   },
 ];
 
-function Recomendados() {
+function Recomendados(props) {
   const [productos, setProductos] = useState(listaProductos);
 
   return (
@@ -59,7 +61,10 @@ function Recomendados() {
       {productos.map((productoIndividual) => {
         return (
           <li key={productoIndividual._id}>
-            <p>{productoIndividual.product_name}</p>
+            <Producto
+              producto={productoIndividual}
+              usarioLogueado={props.usarioLogueado}
+            />
           </li>
         );
       })}

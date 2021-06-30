@@ -6,8 +6,8 @@ import Recomendados from "./Recomendados/Recomendados";
 function Home() {
   return (
     <section>
-      <NavBar />
-      <Recomendados />
+      <NavBar usarioLogueado={false} />
+      <Recomendados usarioLogueado={false} />
     </section>
   );
 }
