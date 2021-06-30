@@ -53,18 +53,14 @@ const listaProductos = [
   },
 ];
 
-function Recomendados(props) {
+function Recomendados() {
   const [productos, setProductos] = useState(listaProductos);
-
   return (
     <ul>
       {productos.map((productoIndividual) => {
         return (
           <li key={productoIndividual._id}>
-            <Producto
-              producto={productoIndividual}
-              usarioLogueado={props.usarioLogueado}
-            />
+            <Producto producto={productoIndividual} />
           </li>
         );
       })}

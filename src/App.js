@@ -1,10 +1,14 @@
 import Home from "./Home/Home";
 
+import AuthContext from "./Contexts/Auth/Auth";
+
 function App() {
   return (
-    <div className='App'>
-      <Home />
-    </div>
+    <AuthContext>
+      <div className='App'>
+        <Home />
+      </div>
+    </AuthContext>
   );
 }
 
