@@ -1,45 +1,39 @@
-import React from 'react'; 
+import React, { useState, useEffect } from "react";
+import { useParams } from "react-router-dom";
 
-class DetalleProducto extends React.Component {
+function DetalleProducto() {
+  const [producto, setProducto] = useState({
+    nombre: null,
+    descripcion: null,
+    price: 0,
+    isActive: false,
+    category: null,
+  });
+  let { idProducto } = useParams();
+  console.log(
+    "🚀 ~ file: DetalleProducto.js ~ line 13 ~ DetalleProducto ~ idProducto",
+    idProducto
+  );
 
-    constructor(props){
-        super(props);
-        this.state =  {
-                nombre: null,
-                descripcion: null,
-                price: 0,
-                isActive: false,
-                category: null
-        }
-    }
+  useEffect(() => {
+    fetch("https://ecomerce-master.herokuapp.com/api/v1/item/" + idProducto)
+      .then((response) => response.json())
+      .then((data) => setProducto(data));
+  }, [idProducto]);
 
-    componentDidMount(){
-        fetch('https://ecomerce-master.herokuapp.com/api/v1/item/'+ this.props.idItem)
-        .then(response => response.json())
-        .then(data => this.setState({
-            nombre: data.product_name,
-            descripcion: data.description,
-            price: data.price,
-            isActive: !data.isActive,
-            category: data.category
-        }))
-    }
-
-    render() {
-        return (
-            <div>
-                <h3>Detalle Producto</h3>
-                <div>
-                    <h4>{this.state.nombre}</h4>
-                    <p>{this.state.descripcion}</p>
-                    <p>${this.state.price}.00</p>
-                    <p>{this.state.category}</p>
-                    <image src={this.state.image}></image>
-                    { this.state.isActive ? <button>Comprar</button> : <p>Agotado</p>}
-                </div>
-            </div>
-        )
-    }
+  return (
+    <div>
+      <h3>Detalle Producto</h3>
+      <div>
+        <h4>{producto.product_name}</h4>
+        <p>{producto.description}</p>
+        <p>${producto.price}.00</p>
+        <p>{producto.category}</p>
+        <img src={producto.image} />
+        {producto.isActive ? <button>Comprar</button> : <p>Agotado</p>}
+      </div>
+    </div>
+  );
 }
 
 export default DetalleProducto;
