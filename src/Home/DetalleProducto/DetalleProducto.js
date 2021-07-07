@@ -10,10 +10,6 @@ function DetalleProducto() {
     category: null,
   });
   let { idProducto } = useParams();
-  console.log(
-    "🚀 ~ file: DetalleProducto.js ~ line 13 ~ DetalleProducto ~ idProducto",
-    idProducto
-  );
 
   useEffect(() => {
     fetch("https://ecomerce-master.herokuapp.com/api/v1/item/" + idProducto)
