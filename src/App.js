@@ -2,6 +2,8 @@ import firebase from "firebase/app";
 import Home from "./Home/Home";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import "firebase/auth";
+import "flickity/css/flickity.css";
+import Flickity from "flickity";
 
 import NavBar from "./NavBar/NavBar";
 import AuthContext from "./Contexts/Auth/Auth";

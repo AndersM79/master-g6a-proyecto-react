@@ -1,0 +1,13 @@
+.carousel {
+  height: 450px;
+}
+
+.carousel-cell {
+  height: 100%;
+  width: 100%;
+}
+
+.carousel-cell img {
+  width: 100%;
+  object-fit: cover;
+}
