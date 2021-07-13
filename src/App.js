@@ -4,11 +4,13 @@ import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import "firebase/auth";
 import "flickity/css/flickity.css";
 import Flickity from "flickity";
+import "bootstrap/dist/css/bootstrap.css";
 
 import NavBar from "./NavBar/NavBar";
 import AuthContext from "./Contexts/Auth/Auth";
 import DetalleProducto from "./Home/DetalleProducto/DetalleProducto";
 import Login from "./Login/Login";
+import Carrito from "./Carrito/Carrito";
 
 function NoMatch() {
   return (
@@ -32,6 +34,9 @@ function App() {
           </Route>
           <Route path='/login'>
             <Login />
+          </Route>
+          <Route path='/carrito'>
+            <Carrito />
           </Route>
           <Route path='*'>
             <NoMatch />

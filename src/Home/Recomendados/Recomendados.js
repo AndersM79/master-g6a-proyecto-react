@@ -1,8 +1,9 @@
 import React, { useState, useEffect } from "react";
 
-import Producto from "../Producto/Producto";
+import Producto from "../../Producto/Producto";
 
 import useFilter from "./useFilter";
+import "./styles.css";
 
 function Recomendados() {
   // salida  // []
@@ -31,15 +32,17 @@ function Recomendados() {
   return (
     <div>
       <input name='term' onChange={handleInputChange} />
-      <ul>
-        {prodFilter.map((productoIndividual) => {
-          return (
-            <li key={productoIndividual._id}>
-              <Producto producto={productoIndividual} />
-            </li>
-          );
-        })}
-      </ul>
+      <div className='container'>
+        <ul className='product-list'>
+          {prodFilter.map((productoIndividual) => {
+            return (
+              <li key={productoIndividual._id}>
+                <Producto producto={productoIndividual} />
+              </li>
+            );
+          })}
+        </ul>
+      </div>
     </div>
   );
 }
