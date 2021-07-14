@@ -4,7 +4,7 @@ import { AuthContext } from "../Contexts/Auth/Auth";
 import { Link } from "react-router-dom";
 
 function Producto(props) {
-  const { session, agregarCarrito, quitarDeCarrito } = useContext(AuthContext);
+  const { agregarCarrito, quitarDeCarrito } = useContext(AuthContext);
   return (
     <div className='card col' style={{ width: "18rem" }}>
       <Link to={`/detalle-producto/${props.producto._id}`}>

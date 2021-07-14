@@ -25,7 +25,7 @@ function DetalleProducto() {
         <p>{producto.description}</p>
         <p>${producto.price}.00</p>
         <p>{producto.category}</p>
-        <img src={producto.image} />
+        <img src={producto.image} alt='test' />
         {producto.isActive ? <button>Comprar</button> : <p>Agotado</p>}
       </div>
     </div>

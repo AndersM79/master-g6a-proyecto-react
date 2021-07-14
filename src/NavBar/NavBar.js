@@ -6,7 +6,7 @@ import { AuthContext } from "../Contexts/Auth/Auth";
 // usarioLogueado -- prop que te indica si el usuario esta logueado o registrado.
 function NavBar() {
   const { session, metodos } = useContext(AuthContext);
-  const { isSignedIn, user } = session;
+  const { isSignedIn } = session;
   return (
     <header>
       <nav className='navbar navbar-expand-lg navbar-light bg-light'>
