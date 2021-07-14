@@ -8,7 +8,6 @@ import useCarrito from "./useCarrito";
 function Carrito() {
   const { carrito } = useContext(AuthContext);
   const { total } = useCarrito(carrito);
-
   return (
     <div>
       <h2>Tus productos de compra</h2>
