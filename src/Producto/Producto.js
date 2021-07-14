@@ -8,7 +8,7 @@ function Producto(props) {
   return (
     <div className='card col' style={{ width: "18rem" }}>
       <Link to={`/detalle-producto/${props.producto._id}`}>
-        <img src={props.producto.image} className='card-img-top' />
+        <img src={props.producto.image} className='card-img-top' alt='test' />
       </Link>
       <div className='card-body'>
         <h5 className='card-title'>{props.producto.product_name}</h5>
