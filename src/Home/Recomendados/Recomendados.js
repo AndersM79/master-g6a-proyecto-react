@@ -15,7 +15,7 @@ function Recomendados() {
   // las dependencias son el arreglo, y dentro se le mandan valores
   // si algun valor de la dependencia cambia se vuelve a ejecutar el codigo.
   useEffect(() => {
-    fetch("https://ecomerce-master.herokuapp.com/api/v1/item")
+    fetch("https://silly-bell-cc6d01.netlify.app/.netlify/functions/server/productos")
       .then((res) => res.json())
       .then((data) => {
         setProductos(data);
