@@ -7,7 +7,10 @@ function NavBar() {
   return (
     <header>
       <nav className='navarContainer'>
-        <img src='https://www.imperiorelojes.com/wp-content/uploads/2021/07/cropped-06imperio.png' />
+        <img
+          src='https://www.imperiorelojes.com/wp-content/uploads/2021/07/cropped-06imperio.png'
+          alt='test'
+        />
         <div>
           <Link>Relojes clasicos</Link>
           <Link>Relojes digitales</Link>
