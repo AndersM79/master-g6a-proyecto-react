@@ -1,10 +1,15 @@
-.product-list {
+.recomendados {
   display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
+  margin-top: 120px;
 }
 
-.product-list li {
-  margin: 15px;
-  list-style: none;
+.recomendados-carrousel {
+  flex-grow: 1;
+  padding-left: 48px;
+  padding-right: 48px;
+}
+
+.recomendados-info {
+  max-width: 200px;
+  padding-left: 120px;
 }

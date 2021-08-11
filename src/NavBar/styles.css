@@ -1,0 +1,29 @@
+.navarContainer {
+  height: 120px;
+  background-color: white;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  padding-left: 120px;
+  padding-right: 120px;
+}
+
+.navarContainer > div {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  flex-grow: 1;
+  padding: 24px;
+}
+
+.navarContainer > div > a {
+  margin: 5px;
+  color: black;
+  text-decoration: none;
+}
+
+.navarContainer > img {
+  width: 160px;
+}

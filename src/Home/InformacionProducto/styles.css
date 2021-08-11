@@ -1,0 +1,9 @@
+.infoProducto > div {
+  padding: 24px;
+}
+
+.infoProducto img {
+  width: 240px;
+  height: 240px;
+  background-size: cover;
+}

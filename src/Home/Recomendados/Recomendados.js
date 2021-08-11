@@ -1,47 +1,48 @@
-import React, { useState, useEffect } from "react";
+import React, { useEffect, useState } from "react";
+import Flickity from "react-flickity-component";
 
-import Producto from "../../Producto/Producto";
-
-import useFilter from "./useFilter";
+import InformacionProducto from "../InformacionProducto/InformacionProducto";
 import "./styles.css";
 
-function Recomendados() {
-  // salida  // []
-  const [productos, setProductos] = useState([]);
-  const [formulario, setValores] = useState({ term: "" });
-  const { prodFilter } = useFilter(productos, formulario.term);
+const flickityOptions = {
+  initialIndex: 0,
+};
 
-  // use efect ejecuta codigo escuchando a las dependencias ([])
-  // las dependencias son el arreglo, y dentro se le mandan valores
-  // si algun valor de la dependencia cambia se vuelve a ejecutar el codigo.
+function Recomendados() {
+  const [recomendados, setRecomendado] = useState([]);
+
   useEffect(() => {
-    fetch("https://silly-bell-cc6d01.netlify.app/.netlify/functions/server/productos")
+    fetch(
+      "https://silly-bell-cc6d01.netlify.app/.netlify/functions/server/productos"
+    )
       .then((res) => res.json())
       .then((data) => {
-        setProductos(data);
+        setRecomendado(data);
       });
   }, []);
 
-  const handleInputChange = (event) => {
-    const target = event.target;
-    const value = target.type === "checkbox" ? target.checked : target.value;
-    const name = target.name;
-    setValores({ ...formulario, [name]: value });
-  };
-
   return (
-    <div>
-      <input name='term' onChange={handleInputChange} />
-      <div className='container'>
-        <ul className='product-list'>
-          {prodFilter.map((productoIndividual) => {
-            return (
-              <li key={productoIndividual._id}>
-                <Producto producto={productoIndividual} />
-              </li>
-            );
-          })}
-        </ul>
+    <div className='recomendados'>
+      <div className='recomendados-info'>
+        <h2>Shop the look</h2>
+        <p>
+          We’ve included plants, pots and accessories to make it easy for you to
+          recreate this look in your home
+        </p>
+      </div>
+      <div className='recomendados-carrousel'>
+        <Flickity
+          className={"carousel"} // default ''
+          elementType={"div"} // default 'div'
+          options={flickityOptions} // takes flickity options {}
+          disableImagesLoaded={false} // default false
+          reloadOnUpdate // default false
+          static // default false
+        >
+          {recomendados.map((producto) => (
+            <InformacionProducto producto={producto} />
+          ))}
+        </Flickity>
       </div>
     </div>
   );

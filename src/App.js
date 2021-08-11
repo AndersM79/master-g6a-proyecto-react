@@ -1,9 +1,8 @@
 import Home from "./Home/Home";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import "firebase/auth";
-import "flickity/css/flickity.css";
-import "bootstrap/dist/css/bootstrap.css";
 
+import "./App.css";
 import NavBar from "./NavBar/NavBar";
 import AuthContext from "./Contexts/Auth/Auth";
 import DetalleProducto from "./Home/DetalleProducto/DetalleProducto";

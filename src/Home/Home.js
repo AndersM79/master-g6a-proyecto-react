@@ -1,14 +1,15 @@
 import React from "react";
 
-import Recomendados from "./Recomendados/Recomendados";
-import DetalleProducto from "./DetalleProducto/DetalleProducto";
 import "./styles.css";
+
+import Lading from "./Landing/Lading";
+import Recomendados from "./Recomendados/Recomendados";
 
 function Home() {
   return (
     <section>
+      <Lading />
       <Recomendados />
-      <DetalleProducto idItem='5fbc19a65a3f794d72471176' />
     </section>
   );
 }
