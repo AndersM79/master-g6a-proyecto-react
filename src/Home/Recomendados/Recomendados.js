@@ -5,7 +5,8 @@ import InformacionProducto from "../InformacionProducto/InformacionProducto";
 import "./styles.css";
 
 const flickityOptions = {
-  initialIndex: 0,
+  initialIndex: 1,
+  pageDots: false,
 };
 
 function Recomendados() {

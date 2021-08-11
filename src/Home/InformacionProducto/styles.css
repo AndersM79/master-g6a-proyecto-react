@@ -1,9 +1,21 @@
-.infoProducto > div {
+.infoProducto {
+  border: 1px solid rgb(207, 207, 207);
+  margin: 0 12px;
+}
+.infoProducto-info {
   padding: 24px;
 }
 
-.infoProducto img {
-  width: 240px;
-  height: 240px;
+.infoProducto-image {
+  width: 100%;
+  height: 260px;
   background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.infoProducto-button {
+  background-color: rgb(27, 27, 27);
+  color: white;
+  margin: 0;
+  font-size: 14px;
 }
