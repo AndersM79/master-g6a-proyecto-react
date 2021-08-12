@@ -1,0 +1,38 @@
+.seccionHome {
+  margin: 120px;
+  display: flex;
+}
+
+.sectionContent {
+  max-width: 50%;
+}
+
+.sectionContent img {
+  width: 100%;
+}
+
+.infoContent {
+  width: 50%;
+  padding: 32px 82px;
+}
+
+.infoContent h2 {
+  font-size: 32px;
+}
+
+.boton {
+  color: white;
+  font-weight: 400;
+  border: none;
+  margin: 24px 0;
+  background-color: #20847c;
+  cursor: pointer;
+}
+
+.layoutDerecha {
+  flex-direction: row-reverse;
+}
+
+.layoutIzquierda {
+  flex-direction: row;
+}
