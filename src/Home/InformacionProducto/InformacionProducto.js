@@ -2,7 +2,7 @@ import React from "react";
 
 import "./styles.css";
 
-function InfoProducto({ producto } = {}) {
+function InfoProducto({ producto, agregarCarrito } = {}) {
   console.log(
     "🚀 ~ file: InformacionProducto.js ~ line 4 ~ InfoProducto ~ producto",
     producto
@@ -19,7 +19,12 @@ function InfoProducto({ producto } = {}) {
         <h4>{producto.product_name}</h4>
         <p>{producto.price}</p>
       </div>
-      <button className='infoProducto-button'>Comprar</button>
+      <button
+        className='infoProducto-button'
+        onClick={() => agregarCarrito(producto)}
+      >
+        Comprar
+      </button>
     </div>
   );
 }

@@ -1,4 +1,4 @@
-.navarContainer {
+.nav {
   height: 120px;
   background-color: white;
   display: flex;
@@ -9,21 +9,50 @@
   padding-right: 120px;
 }
 
-.navarContainer > div {
-  display: flex;
-  flex-direction: row;
-  justify-content: flex-start;
-  align-items: center;
-  flex-grow: 1;
-  padding: 24px;
-}
-
-.navarContainer > div > a {
+.nav a {
   margin: 5px;
   color: black;
   text-decoration: none;
 }
 
-.navarContainer > img {
+.nav > img {
   width: 160px;
+}
+
+.nav-links {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  padding: 24px;
+}
+
+.nav-icons {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  align-items: center;
+  padding: 24px;
+  flex-grow: 1;
+}
+
+.nav-icons-container {
+  position: relative;
+}
+
+.nav-icons-badge {
+  width: 22px;
+  padding: 0;
+  margin: 0;
+  height: 14px;
+  background-color: brown;
+  color: azure;
+  right: -20px;
+  top: -5px;
+  border-radius: 11px;
+  font-size: 11px;
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }

@@ -34,14 +34,9 @@ function Auth(props) {
 
   const agregarCarrito = (producto) => {
     setCarrito((prevState) => [...prevState, producto]);
-    alert("producto agregado a tu carrito");
   };
 
   const quitarDeCarrito = (productoEleminado) => {
-    console.log(
-      "🚀 ~ file: Auth.js ~ line 39 ~ quitarDeCarrito ~ productoEleminado",
-      productoEleminado
-    );
     setCarrito((prevState) =>
       prevState.filter((producto) => producto._id !== productoEleminado._id)
     );

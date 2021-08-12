@@ -1,7 +1,8 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useContext } from "react";
 import Flickity from "react-flickity-component";
 
 import InformacionProducto from "../InformacionProducto/InformacionProducto";
+import { AuthContext } from "../../Contexts/Auth/Auth";
 import "./styles.css";
 
 const flickityOptions = {
@@ -11,6 +12,7 @@ const flickityOptions = {
 
 function Recomendados() {
   const [recomendados, setRecomendado] = useState([]);
+  const { agregarCarrito } = useContext(AuthContext);
 
   useEffect(() => {
     fetch(
@@ -41,7 +43,10 @@ function Recomendados() {
           static // default false
         >
           {recomendados.map((producto) => (
-            <InformacionProducto producto={producto} />
+            <InformacionProducto
+              producto={producto}
+              agregarCarrito={agregarCarrito}
+            />
           ))}
         </Flickity>
       </div>
