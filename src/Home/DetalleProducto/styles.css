@@ -1,0 +1,45 @@
+.detalle-producto {
+  margin: 56px 0;
+}
+
+.detalle-producto p {
+  margin: 0;
+}
+
+.detalle-producto h4 {
+  margin-bottom: 5px;
+  font-size: 16px;
+}
+
+.detalle-producto h3 {
+  margin: 0;
+  font-size: 48px;
+}
+
+.detalle-producto h2 {
+  margin-top: 0;
+  font-size: 32px;
+}
+
+.detalle-producto-compra {
+  display: flex;
+  padding: 0 120px;
+  justify-content: center;
+}
+
+.detalle-producto-compra > div {
+  width: 50%;
+}
+
+.detalle-producto-compra-info {
+  display: flex;
+  width: 100%;
+  padding: 0 56px;
+  flex-direction: column;
+}
+
+.comprar {
+  margin: 48px 0;
+  width: 80%;
+  align-self: center;
+}

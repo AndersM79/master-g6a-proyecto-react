@@ -1,32 +1,57 @@
-import React, { useState, useEffect } from "react";
+import React, { useEffect, useState, useContext } from "react";
 import { useParams } from "react-router-dom";
+import Flickity from "react-flickity-component";
+
+import { AuthContext } from "../../Contexts/Auth/Auth";
+import "./styles.css";
+
+const flickityOptions = {
+  initialIndex: 0,
+};
 
 function DetalleProducto() {
-  const [producto, setProducto] = useState({
-    nombre: null,
-    descripcion: null,
-    price: 0,
-    isActive: false,
-    category: null,
-  });
+  const data = useContext(AuthContext);
+  const { agregarCarrito } = data;
+  const [producto, setProducto] = useState({});
   let { idProducto } = useParams();
 
   useEffect(() => {
-    fetch("https://ecomerce-master.herokuapp.com/api/v1/item/" + idProducto)
+    fetch(
+      "http://localhost:4000/.netlify/functions/server/productos/detalle/" +
+        idProducto
+    )
       .then((response) => response.json())
       .then((data) => setProducto(data));
   }, [idProducto]);
 
   return (
-    <div>
-      <h3>Detalle Producto</h3>
-      <div>
-        <h4>{producto.product_name}</h4>
-        <p>{producto.description}</p>
-        <p>${producto.price}.00</p>
-        <p>{producto.category}</p>
-        <img src={producto.image} alt='test' />
-        {producto.isActive ? <button>Comprar</button> : <p>Agotado</p>}
+    <div className='detalle-producto'>
+      <div className='detalle-producto-compra'>
+        <div>
+          <Flickity
+            className={"carousel"} // default ''
+            elementType={"div"} // default 'div'
+            options={flickityOptions} // takes flickity options {}
+            disableImagesLoaded={false} // default false
+            reloadOnUpdate // default false
+            static // default false
+          >
+            <img src={producto.image} alt='img' />
+          </Flickity>
+        </div>
+        <div className='detalle-producto-compra-info'>
+          <h3>{producto.product_name}</h3>
+          <h2>${producto.price}.00</h2>
+          <p>{producto.description}</p>
+          <h4>Categoria</h4>
+          <p>{producto.category}</p>
+          <button
+            className='button-2 comprar'
+            onClick={() => agregarCarrito(producto)}
+          >
+            Agregar a carrito
+          </button>
+        </div>
       </div>
     </div>
   );

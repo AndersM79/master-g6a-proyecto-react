@@ -13,7 +13,7 @@ function Home() {
   return (
     <section>
       <Lading />
-      <Recomendados />
+      <Recomendados titulo='Relojes clasicos' categoria='relojes-clasicos' />
       <Seccion
         imagen={img1}
         titulo='Relojes digitales'
@@ -31,7 +31,7 @@ Shop from our curated collection of low-maintenance plants perfect for a home or
 
 Shop from our curated collection of low-maintenance plants perfect for a home or commercial office.`}
       />
-      <Recomendados />
+      <Recomendados titulo='Smart watch' categoria='smartwatch' />
       <Seccion
         imagen={img1}
         titulo='Relojes digitales'

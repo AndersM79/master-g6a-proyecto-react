@@ -10,24 +10,24 @@ const flickityOptions = {
   pageDots: false,
 };
 
-function Recomendados() {
+function Recomendados({ titulo, categoria }) {
   const [recomendados, setRecomendado] = useState([]);
-  const { agregarCarrito } = useContext(AuthContext);
-
+  const data = useContext(AuthContext);
+  const { agregarCarrito } = data;
   useEffect(() => {
     fetch(
-      "https://silly-bell-cc6d01.netlify.app/.netlify/functions/server/productos"
+      `http://localhost:4000/.netlify/functions/server/productos/${categoria}`
     )
       .then((res) => res.json())
       .then((data) => {
         setRecomendado(data);
       });
-  }, []);
+  }, [categoria]);
 
   return (
     <div className='recomendados'>
       <div className='recomendados-info'>
-        <h2>Shop the look</h2>
+        <h2>{titulo}</h2>
         <p>
           We’ve included plants, pots and accessories to make it easy for you to
           recreate this look in your home
