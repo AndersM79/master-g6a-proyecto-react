@@ -2,7 +2,7 @@ import React, { useEffect, useState, useContext } from "react";
 import Flickity from "react-flickity-component";
 
 import InformacionProducto from "../InformacionProducto/InformacionProducto";
-import { AuthContext } from "../../Contexts/Auth/Auth";
+import { CarritoContext } from "../../Contexts/carritoContext";
 import "./styles.css";
 
 const flickityOptions = {
@@ -12,8 +12,7 @@ const flickityOptions = {
 
 function Recomendados({ titulo, categoria }) {
   const [recomendados, setRecomendado] = useState([]);
-  const data = useContext(AuthContext);
-  const { agregarCarrito } = data;
+  const { agregarCarrito } = useContext(CarritoContext);
   useEffect(() => {
     fetch(
       `http://localhost:4000/.netlify/functions/server/productos/${categoria}`

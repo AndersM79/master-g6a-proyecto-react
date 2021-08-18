@@ -3,11 +3,11 @@ import { Link } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faShoppingBag } from "@fortawesome/free-solid-svg-icons";
 
-import { AuthContext } from "../Contexts/Auth/Auth";
+import { CarritoContext } from "../Contexts/carritoContext";
 import "./styles.css";
 
 function NavBar() {
-  const { carrito } = useContext(AuthContext);
+  const { productosCarrito, openModal } = useContext(CarritoContext);
   return (
     <header>
       <nav className='nav'>
@@ -21,10 +21,10 @@ function NavBar() {
         </div>
         <div className='nav-icons'>
           <div className='nav-icons-container'>
-            <Link>
+            <button onClick={openModal}>
               <FontAwesomeIcon icon={faShoppingBag} size='lg' />
-            </Link>
-            <div className='nav-icons-badge'>{carrito.length}</div>
+            </button>
+            <div className='nav-icons-badge'>{productosCarrito.length}</div>
           </div>
         </div>
       </nav>

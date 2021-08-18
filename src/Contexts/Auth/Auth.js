@@ -30,18 +30,6 @@ const logout = () => {
 };
 
 function Auth(props) {
-  const [carrito, setCarrito] = useState([]);
-
-  const agregarCarrito = (producto) => {
-    setCarrito((prevState) => [...prevState, producto]);
-  };
-
-  const quitarDeCarrito = (productoEleminado) => {
-    setCarrito((prevState) =>
-      prevState.filter((producto) => producto._id !== productoEleminado._id)
-    );
-  };
-
   return (
     <FirebaseAuthProvider {...firebaseConfig} firebase={firebase}>
       <FirebaseAuthConsumer>
@@ -59,9 +47,6 @@ function Auth(props) {
                   sessionConGithub,
                   logout,
                 },
-                carrito: carrito,
-                agregarCarrito,
-                quitarDeCarrito,
               }}
             >
               {props.children}

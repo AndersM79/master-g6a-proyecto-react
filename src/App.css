@@ -27,6 +27,18 @@ h1 {
   font-weight: 500;
 }
 
+.modal {
+  position: absolute;
+  right: 0;
+  top: 0;
+  height: 100%;
+  background-color: rgb(246, 246, 245);
+  padding: 24px;
+  min-width: 450px;
+  justify-content: center;
+  display: flex;
+  flex-direction: column;
+}
 /*! Flickity v2.1.2
 https://flickity.metafizzy.co
 ---------------------------------------------- */

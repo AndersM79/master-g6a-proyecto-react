@@ -56,3 +56,12 @@
   align-items: center;
   justify-content: center;
 }
+
+nav button {
+  width: auto;
+  height: auto;
+  margin: 0;
+  padding: 0;
+  border: none;
+  background: transparent;
+}

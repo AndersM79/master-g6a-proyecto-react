@@ -2,7 +2,7 @@ import React, { useEffect, useState, useContext } from "react";
 import { useParams } from "react-router-dom";
 import Flickity from "react-flickity-component";
 
-import { AuthContext } from "../../Contexts/Auth/Auth";
+import { CarritoContext } from "../../Contexts/carritoContext";
 import "./styles.css";
 
 const flickityOptions = {
@@ -10,8 +10,7 @@ const flickityOptions = {
 };
 
 function DetalleProducto() {
-  const data = useContext(AuthContext);
-  const { agregarCarrito } = data;
+  const {agregarCarrito} = useContext(CarritoContext);
   const [producto, setProducto] = useState({});
   let { idProducto } = useParams();
 

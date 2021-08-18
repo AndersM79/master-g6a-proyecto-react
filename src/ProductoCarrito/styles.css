@@ -1,0 +1,33 @@
+.producto-carrito {
+  display: flex;
+  width: 100%;
+  margin: 12px 0;
+}
+
+.producto-carrito img {
+  width: 120px;
+  height: 120px;
+}
+
+.producto-carrito-info {
+  padding: 0 12px;
+  flex-grow: 1;
+  flex-direction: column;
+  display: flex;
+  justify-content: space-between;
+}
+
+.producto-carrito-info-2 {
+  display: flex;
+  justify-content: space-between;
+}
+
+.producto-carrito .button-trash {
+  width: auto;
+  height: auto;
+  margin: 0;
+  padding: 0;
+  border: none;
+  background: transparent;
+  color: #5d5d5d;
+}
